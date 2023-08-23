@@ -77,6 +77,10 @@ function scoreBoard(){
     console.log(`Ties: ${totalTies}`)
 }
 
+function playByPlay(playerChoice,computerChoice){
+    console.log(`You played: ${playerChoice}`);
+    console.log(`Computer played: ${computerChoice}`);
+}
 function declareWinner(outcome) {
     if (outcome=="player"){
         console.log("Congrats! You win!")
@@ -87,3 +91,25 @@ function declareWinner(outcome) {
     }
 }
 
+function game(){
+
+    let compChoice = getComputerChoice()
+    let humanChoice = getPlayerChoice()
+    let winner = decideWinner(humanChoice,compChoice)
+    tallyGames(winner)
+    playByPlay(humanChoice,compChoice)
+    declareWinner(winner)
+    scoreBoard()
+    
+}
+
+let play = true;
+
+while (play){
+    game()
+
+    let keepGoing = prompt("Keep playing?");
+    if (keepGoing == "no"){
+        play = false;
+    }
+}
