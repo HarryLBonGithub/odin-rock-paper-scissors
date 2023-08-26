@@ -1,0 +1,15 @@
+.player-buttons{
+    display: flex;
+    justify-content: center;
+    gap:16px;
+}
+
+.player-buttons button{
+    background: rgb(126, 126, 255);
+    color:white;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    padding:8px;
+}

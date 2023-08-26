@@ -102,14 +102,3 @@ function game(){
     scoreBoard()
     
 }
-
-let play = true;
-
-while (play){
-    game()
-
-    let keepGoing = prompt("Keep playing?");
-    if (keepGoing == "no"){
-        play = false;
-    }
-}
