@@ -104,13 +104,42 @@ function game(){
     
 }
 
-function playerChoice(event){
-    let choice = this.getAttribute('data-selection');
-    console.log(choice);
+function updateCommentary(playerChoice, computerChoice){
+    const commentary = document.querySelector('.commentary');
+    commentary.textContent = "You played: " + playerChoice + " Comp played: " +computerChoice;
 }
 
-const playerButtons = document.querySelectorAll('.player-buttons > button');
+function updateScoreBoard(){
+    const compScore = document.querySelector('.computer-score-card > h3');
+    const humnScore = document.querySelector('.human-score-card > h3');
 
-console.log(playerButtons.length);
+    compScore.textContent = totalLoses;
+    humnScore.textContent = totalWins;
+}
 
-playerButtons.forEach(button => button.addEventListener('click', playerChoice));
+function playerChoice(event){
+    let humnChoice = this.getAttribute('data-selection');
+
+    let compChoice = getComputerChoice();
+
+    let gameWinner = decideWinner(humnChoice,compChoice);
+
+    tallyGames(gameWinner);
+
+    updateCommentary(humnChoice,compChoice);
+
+    updateScoreBoard();
+
+
+}
+
+function prepButtons(){
+    const playerButtons = document.querySelectorAll('.player-buttons > button');
+
+    console.log(playerButtons.length);
+
+    playerButtons.forEach(button => button.addEventListener('click', playerChoice));
+}
+
+prepButtons();
+
