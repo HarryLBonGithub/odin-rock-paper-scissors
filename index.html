@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="rock-paper-scissors.js"></script>
+    <script src="rock-paper-scissors.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="score-board">
+        <div class="computer-score-card">
+            <h1>COMP</h1>
+            <h2>0</h2>
+        </div>
+
+        <div class="human-score-card">
+            <h1>HUMN</h1>
+            <h2>0</h2>
+        </div>
+    </div>
+
     <div class="player-buttons">
-        <button>rock</button>
-        <button>paper</button>
-        <button>scissors</button>
+        <button data-selection="rock">rock</button>
+        <button data-selection="paper">paper</button>
+        <button data-selection="scissors">scissors</button>
     </div>
 </body>
 </html>

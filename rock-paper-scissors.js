@@ -81,6 +81,7 @@ function playByPlay(playerChoice,computerChoice){
     console.log(`You played: ${playerChoice}`);
     console.log(`Computer played: ${computerChoice}`);
 }
+
 function declareWinner(outcome) {
     if (outcome=="player"){
         console.log("Congrats! You win!")
@@ -102,3 +103,14 @@ function game(){
     scoreBoard()
     
 }
+
+function playerChoice(event){
+    let choice = this.getAttribute('data-selection');
+    console.log(choice);
+}
+
+const playerButtons = document.querySelectorAll('.player-buttons > button');
+
+console.log(playerButtons.length);
+
+playerButtons.forEach(button => button.addEventListener('click', playerChoice));
